@@ -10,7 +10,7 @@ contador_montanha = 0
 contador_cade = 0
 
 def get_temperature(city):
-    API_KEY = "a7c6aa4a8a6a2014f5d42362e1f31845"
+    API_KEY = "Sua chave api"
     complete_url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     print("Complete URL:", complete_url)
     response = requests.get(complete_url)
@@ -51,8 +51,8 @@ async def on_message(message):
     
     elif content_lower.startswith("!temperatura"):
         args = content_lower.split(' ')
-        if len(args) >= 2:  # Verifica se o usuário forneceu a cidade como argumento
-            city = ' '.join(args[1:])  # Trata a cidade composta como um único argumento
+        if len(args) >= 2: 
+            city = ' '.join(args[1:])  
             temperature = get_temperature(city)
 
             if temperature is not None:
@@ -66,5 +66,5 @@ async def on_message(message):
     elif content_lower.startswith("!epic"):
         await message.channel.send('Os jogos da epic de graça estão aqui: {}'.format("https://store.epicgames.com/pt-BR/free-games"))
 
-bot.run("MTEzMzEwMzA2Njk4NDQ5MzI0OA.GJH0OF.wQ_6I3CPqWlK-PQ_FqkXtsr34Kq38ltL9ebqDU")
+bot.run("seutoken")
 
